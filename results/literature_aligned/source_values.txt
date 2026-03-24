@@ -1,0 +1,18 @@
+Literature-aligned source values used for plotting
+
+1) CoFE (Contrastive Learning with Counterfactual Explanations for Radiology Report Generation), MIMIC-CXR:
+   - R2Gen baseline: CIDEr 0.253, BLEU-4 0.103, ROUGE-L 0.277, METEOR 0.142
+   - CoFE: CIDEr 0.453, BLEU-4 0.125, ROUGE-L 0.304, METEOR 0.176
+   - Clinical efficacy:
+     * R2Gen: Precision 0.333, Recall 0.273, F1 0.276
+     * CoFE: Precision 0.489, Recall 0.370, F1 0.405
+
+2) TRRG ablation study, MIMIC-CXR:
+   - Base: BLEU-4 0.137, ROUGE 0.290, CIDEr 0.196, F1 0.354
+   - +DCI: BLEU-4 0.142, ROUGE 0.311, CIDEr 0.207, F1 0.384
+   - +DCI+CMCI: BLEU-4 0.159, ROUGE 0.324, CIDEr 0.211, F1 0.387
+   - +DCI+CMCI+DAL: BLEU-4 0.157, ROUGE 0.336, CIDEr 0.219, F1 0.393
+
+Important:
+- These plots are literature-aligned visualizations built from published end-point values.
+- They are not direct RadRAG experimental outputs unless you separately validate them on your own runs.

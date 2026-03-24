@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RadRAG</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div>
+          <h1>RadRAG</h1>
+          <p>Multimodal query (image + text) · Results with sources and ontology tags</p>
+        </div>
+        <div class="actions">
+          <button id="resetBtn" class="ghost">Reset</button>
+          <button id="newBtn" class="primary">+ New</button>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel query-panel">
+          <h2>Your query</h2>
+          <p class="muted">Add an image (optional) and describe the request (symptoms, instructions, SNOMED keywords, etc.)</p>
+
+          <div class="tabs">
+            <button class="tab active">Text</button>
+            <button class="tab">Image</button>
+          </div>
+
+          <textarea id="queryText" placeholder="Interpret this wrist X-ray, suspected Colles fracture. Provide findings, impression, and supporting sources."></textarea>
+
+          <div class="upload-box">
+            <div id="previewWrapper" class="preview-wrapper hidden">
+              <img id="previewImage" alt="Preview" />
+              <button id="removeImageBtn" class="remove-image">×</button>
+            </div>
+            <label class="upload-label">
+              <input id="imageInput" type="file" accept="image/*" />
+              <span>Attach image</span>
+            </label>
+            <span id="fileName" class="filename"></span>
+          </div>
+
+          <div class="cta-row">
+            <div id="status" class="status">Ready</div>
+            <button id="runBtn" class="primary run">Run</button>
+          </div>
+        </section>
+
+        <aside class="panel history-panel">
+          <h2>History</h2>
+          <p class="muted">Your last 20 queries</p>
+          <div id="historyList" class="history-list"></div>
+        </aside>
+      </main>
+
+      <section class="results-section">
+        <div class="results-head">
+          <h2>Results</h2>
+          <span id="resultCount" class="muted">0 item(s)</span>
+        </div>
+
+        <div id="summaryBox" class="summary-box hidden"></div>
+        <div id="resultsGrid" class="results-grid"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
