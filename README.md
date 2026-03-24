@@ -64,3 +64,8 @@ The RadRAG pipeline consists of three main stages:
 ---
 
 ## Repository Structure
+backend/ # API and inference pipeline
+frontend/ # User interface (RadRAG demo)
+results/ # Evaluation plots and figures
+scripts/ # Plot generation and utilities
+docs/ # Screenshots and additional materials
